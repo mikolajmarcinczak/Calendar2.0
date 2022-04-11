@@ -23,6 +23,7 @@ namespace Calendar_Revisited
     {
         public MainWindow()
         {
+            DataContext = new CalendarViewModel();
             InitializeComponent();
         }
         private void SettingsView_Click(object sender, RoutedEventArgs e)

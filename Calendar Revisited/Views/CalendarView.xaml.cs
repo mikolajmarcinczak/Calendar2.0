@@ -18,7 +18,7 @@ namespace Calendar_Revisited.Views
     /// <summary>
     /// Interaction logic for CalendarView.xaml
     /// </summary>
-    public partial class CalendarView : UserControl
+    public partial class CalendarView : UserControl 
     {
         public CalendarView()
         {

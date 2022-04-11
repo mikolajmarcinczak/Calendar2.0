@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calendar_Revisited.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,25 @@ namespace Calendar_Revisited
         {
             InitializeComponent();
         }
+        private void SettingsView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SettingsViewModel();
+        }
+
+        private void CalendarView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new CalendarViewModel();
+        }
+
+        private void ContactsView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ContactsViewModel();
+        }
+
+        private void NotepadView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new NotepadViewModel();
+        }
+
     }
 }

@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Calendar_Revisited.Views"
+             xmlns:views="clr-namespace:Calendar_Revisited.Views"
+             xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              mc:Ignorable="d">
     <Grid>
         <TextBox Height="400" Width="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="SETTINGS"/>

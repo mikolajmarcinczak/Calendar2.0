@@ -24,5 +24,15 @@ namespace Calendar_Revisited.Views
         {
             InitializeComponent();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

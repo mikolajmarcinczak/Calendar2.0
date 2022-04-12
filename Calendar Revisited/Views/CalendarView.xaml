@@ -3,9 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Calendar_Revisited.Views"
+             xmlns:local="clr-namespace:Calendar_Revisited.Views"        
+             xmlns:views="clr-namespace:Calendar_Revisited.Views"
+             xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              mc:Ignorable="d">
-    <Grid>
-        <TextBox Height="400" Width="400" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="CALENDAR"/>
+    <Grid Background="#6666" x:Name="DayGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Sunday" Grid.Row="0" Grid.Column="0" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Monday" Grid.Row="0" Grid.Column="1" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Tuesday" Grid.Row="0" Grid.Column="2" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Wednesday" Grid.Row="0" Grid.Column="3" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Thursday" Grid.Row="0" Grid.Column="4" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Friday" Grid.Row="0" Grid.Column="5" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+        <Label Content="Saturday" Grid.Row="0" Grid.Column="6" FontFamily="Candara" FontSize="24" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"/>
+
     </Grid>
 </UserControl>

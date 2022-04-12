@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
         mc:Ignorable="d"
         FontSize="16"
-        Title="MainWindow" SizeToContent="WidthAndHeight" Height="1080" Width="1920">
+        Title="MainWindow" SizeToContent="WidthAndHeight" MinHeight="768" MinWidth="1366" Height="1080" Width="1920">
 
     <Window.Resources>
         <DataTemplate x:Name="settingsViewTemplate" DataType="{x:Type vm:SettingsViewModel}">
@@ -28,7 +28,8 @@
     <Grid Background="#888888">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.6*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
@@ -53,10 +54,11 @@
             
         </DockPanel>
         
-        <DockPanel x:Name="Menu" Background="#666666" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7">
+        <DockPanel x:Name="Menu" Background="#666666" Grid.Row="0" Grid.Column="0" Grid.RowSpan="8">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.2*"/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -65,20 +67,22 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" Content="Settings" Click="SettingsView_Click"/>
-                <Button Grid.Row="1" Content="Calendar" Click="CalendarView_Click"/>
-                <Button Grid.Row="2" Content="Address Book" Click="ContactsView_Click"/>
-                <Button Grid.Row="3" Content="Notepad" Click="NotepadView_Click"/>
+                <Button Grid.Row="0" Grid.RowSpan="2" Content="Settings" Click="SettingsView_Click"/>
+                <Button Grid.Row="2" Content="Calendar" Click="CalendarView_Click"/>
+                <Button Grid.Row="3" Content="Address Book" Click="ContactsView_Click"/>
+                <Button Grid.Row="4" Content="Notepad" Click="NotepadView_Click"/>
             </Grid>
         </DockPanel>
-
-        <ContentControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="7" Content="{Binding}"/>
-
-        <DockPanel x:Name="UserStatus" Background="#666688" Grid.Row="8" Grid.Column="0">
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1" Grid.RowSpan="7" Grid.ColumnSpan="7">
+            <ContentControl Content="{Binding}"/>
+        </ScrollViewer>
+        
+        <DockPanel x:Name="UserStatus" Background="#666688" Grid.Row="9" Grid.Column="0">
             
         </DockPanel>
 
-        <DockPanel x:Name="Navigation" Background="#668866" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="7">
+        <DockPanel x:Name="Navigation" Background="#668866" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="7">
             
         </DockPanel>
         

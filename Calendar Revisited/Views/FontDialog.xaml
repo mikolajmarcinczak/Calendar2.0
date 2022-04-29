@@ -8,7 +8,8 @@
         xmlns:win="clr-namespace:System.Windows;assembly=PresentationCore"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Font Dialog" Height="300" Width="300">
+        Title="Font Dialog" Height="300" Width="300"
+        WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <ObjectDataProvider x:Key="FontFamilyOptions" ObjectType="{x:Type media:Fonts}" MethodName="get_SystemFontFamilies"/>
 
@@ -46,7 +47,9 @@
 
         <DockPanel Grid.Row="0" Grid.Column="0">
             <TextBlock DockPanel.Dock="Top" FontWeight="Bold">Font Family</TextBlock>
-            <ListBox ItemsSource="{Binding Source={StaticResource FontFamilyOptions}}" SelectedItem="{Binding Family}" SelectedIndex="0">
+            <ListBox ItemsSource="{Binding Source={StaticResource FontFamilyOptions}}" 
+                     SelectedItem="{Binding Family}" 
+                     SelectedIndex="0">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" FontFamily="{Binding}"/>
@@ -57,17 +60,23 @@
 
         <DockPanel Grid.Row="0" Grid.Column="1">
             <TextBlock DockPanel.Dock="Top" FontWeight="Bold">Font Size</TextBlock>
-            <ListBox ItemsSource="{Binding Source={StaticResource FontSizeOptions}}" SelectedItem="{Binding Size}" SelectedIndex="0"/>
+            <ListBox ItemsSource="{Binding Source={StaticResource FontSizeOptions}}" 
+                     SelectedItem="{Binding Size}" 
+                     SelectedIndex="0"/>
         </DockPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0">
             <TextBlock DockPanel.Dock="Top" FontWeight="Bold">Font Styles</TextBlock>
-            <ListBox ItemsSource="{Binding Source={StaticResource FontStyleOptions}}" SelectedItem="{Binding Style}" SelectedIndex="0"/>
+            <ListBox ItemsSource="{Binding Source={StaticResource FontStyleOptions}}" 
+                     SelectedItem="{Binding Style}" 
+                     SelectedIndex="0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock DockPanel.Dock="Top" FontWeight="Bold">Font Size</TextBlock>
-            <ListBox ItemsSource="{Binding Source={StaticResource FontWeightOptions}}" SelectedItem="{Binding Weight}" SelectedIndex="0"/>
+            <ListBox ItemsSource="{Binding Source={StaticResource FontWeightOptions}}" 
+                     SelectedItem="{Binding Weight}" 
+                     SelectedIndex="0"/>
         </StackPanel>
     </Grid>
 </Window>

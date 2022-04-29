@@ -23,16 +23,16 @@ namespace Calendar_Revisited.ViewModels
 
         private void OpenStyleDialog()
         {
-            var fontDialog = new FontDialog();
+            var fontDialog = new Views.FontDialog();
             fontDialog.DataContext = Format;
             fontDialog.ShowDialog();
         }
 
         private void ToggleWrap()
         {
-            if (!(Format.Wrap == System.Windows.TextWrapping.Wrap))
+            if (Format.Wrap == System.Windows.TextWrapping.Wrap)
             {
-                Format.Wrap = System.Windows.TextWrapping.Wrap;
+                Format.Wrap = System.Windows.TextWrapping.NoWrap;
             }
             else
             {

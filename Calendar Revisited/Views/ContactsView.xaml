@@ -10,10 +10,19 @@
     <Grid>
         <DataGrid x:Name="AddressTable" AutoGenerateColumns="False" SelectionMode="Single" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ID}" Header="ID" x:Name="id" IsReadOnly="True" Width="Auto" MinWidth="100"/>
-                <DataGridTextColumn Binding="{Binding ContactName}" Header="Name" x:Name="contactName" Width="Auto" MinWidth="300"/>
-                <DataGridTextColumn Binding="{Binding PhoneNumber}" Header="Phone Number" x:Name="phoneNumber" Width="Auto" MinWidth="200"/>
-                <DataGridTextColumn Binding="{Binding MailAddress}" Header="Mail Address" x:Name="mailAddress" Width="Auto" MinWidth="300"/>
+                <DataGridTextColumn Binding="{Binding ID}" 
+                                    Header="ID" x:Name="id" 
+                                    IsReadOnly="True" 
+                                    Width="Auto" MinWidth="100"/>
+                <DataGridTextColumn Binding="{Binding ContactName}" 
+                                    Header="Name" x:Name="contactName" 
+                                    Width="Auto" MinWidth="300"/>
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" 
+                                    Header="Phone Number" x:Name="phoneNumber" 
+                                    Width="Auto" MinWidth="200"/>
+                <DataGridTextColumn Binding="{Binding MailAddress}" 
+                                    Header="Mail Address" x:Name="mailAddress" 
+                                    Width="Auto" MinWidth="300"/>
 
                 <DataGridTemplateColumn Header="Edit" Width="Auto" MinWidth="100">
                     <DataGridTemplateColumn.CellTemplate>

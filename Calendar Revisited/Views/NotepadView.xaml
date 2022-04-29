@@ -31,12 +31,18 @@
             </Menu.Items>
         </Menu>
     
-        <Grid>
-            <DockPanel>
-                <TextBlock DockPanel.Dock="Bottom" DataContext="{Binding File.Document}" Text="{Binding FilePath}"/>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Bottom" DataContext="{Binding File.Document}" Text="{Binding FilePath}"/>
 
-                <TextBox DockPanel.Dock="Top" VerticalScrollBarVisibility="Visible" DataContext="{Binding Editor}" FontFamily="{Binding Format.Family}" FontSize="{Binding Format.Size}" FontStyle="{Binding Format.Style}" FontWeight="{Binding Format.Weight}" TextWrapping="{Binding Format.Wrap}" AcceptsReturn="True" AcceptsTab="True" Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            </DockPanel>
-        </Grid>
+            <TextBox DockPanel.Dock="Top" VerticalScrollBarVisibility="Visible" 
+                     DataContext="{Binding Editor}" 
+                     FontFamily="{Binding Format.Family}" 
+                     FontSize="{Binding Format.Size}" 
+                     FontStyle="{Binding Format.Style}" 
+                     FontWeight="{Binding Format.Weight}" 
+                     TextWrapping="{Binding Format.Wrap}" 
+                     AcceptsReturn="True" AcceptsTab="True" 
+                     Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </DockPanel>
     </DockPanel>
 </UserControl>

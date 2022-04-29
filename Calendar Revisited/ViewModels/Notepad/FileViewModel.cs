@@ -47,7 +47,7 @@ namespace Calendar_Revisited.ViewModels
             if (saveFileDialog.ShowDialog() == true)
             {
                 DockFile(saveFileDialog);
-                File.WriteAllText(Document.FilePath, Document.Text);
+                File.WriteAllText(saveFileDialog.FileName, Document.Text);
             }
         }
 
@@ -57,11 +57,11 @@ namespace Calendar_Revisited.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 DockFile(openFileDialog);
-                Document.Text = File.ReadAllText(Document.FileName);
+                Document.Text = File.ReadAllText(openFileDialog.FileName);
             }
         }
 
-        public void DockFile<T> (T dialog) where T : FileDialog
+        public void DockFile<T>(T dialog) where T : FileDialog
         {
             Document.FilePath = dialog.FileName;
             Document.FileName = dialog.SafeFileName;

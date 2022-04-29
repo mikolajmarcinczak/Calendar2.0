@@ -74,7 +74,7 @@
             </Grid>
         </DockPanel>
         
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1" Grid.RowSpan="7" Grid.ColumnSpan="7">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="7" Grid.ColumnSpan="7">
             <ContentControl Content="{Binding}"/>
         </ScrollViewer>
         

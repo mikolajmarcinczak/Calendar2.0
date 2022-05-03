@@ -7,7 +7,14 @@
              xmlns:views="clr-namespace:Calendar_Revisited.Views"
              xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              mc:Ignorable="d">
-    <Grid>
+    <UserControl.Resources>
+        <vm:ContactsViewModel x:Key="vm"/>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource vm}"/>
+    </UserControl.DataContext>
+    <Grid>       
+        
         <DataGrid x:Name="AddressTable" AutoGenerateColumns="False" SelectionMode="Single" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding ID}" 
@@ -27,7 +34,7 @@
                 <DataGridTemplateColumn Header="Edit" Width="Auto" MinWidth="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" CommandParameter="{Binding id}" Click="Edit_Click"/>
+                            <Button Content="Edit" CommandParameter="{Binding ID}" Command="{Binding EditCommand}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -35,7 +42,7 @@
                 <DataGridTemplateColumn Header="Delete"  Width="Auto" MinWidth="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Remove" Click="Remove_Click"/>
+                            <Button Content="Remove" Command="{Binding DeleteCommand}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

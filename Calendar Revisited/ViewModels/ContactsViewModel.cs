@@ -23,7 +23,7 @@ namespace Calendar_Revisited.ViewModels
 
         private void EditContact()
         {
-            Contact.ID = ((UserContact))
+
         }
 
         private void DeleteContact()

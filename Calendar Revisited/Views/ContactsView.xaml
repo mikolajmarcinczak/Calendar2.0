@@ -13,21 +13,44 @@
     <UserControl.DataContext>
         <Binding Source="{StaticResource vm}"/>
     </UserControl.DataContext>
-    <Grid>       
+    <Grid>        
+        <DockPanel>
+        <StackPanel Grid.ColumnSpan="2" DockPanel.Dock="Top">
+            <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Target="{Binding ElementName=textName}"/>
+            <TextBox HorizontalAlignment="Left" Height="Auto" TextWrapping="Wrap" 
+                     VerticalAlignment="Top" MinWidth="300" x:Name="textName"/>
+            
+            <Label Content="Phone Number:" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Target="{Binding ElementName=textPhone}"/>
+            <TextBox HorizontalAlignment="Left" Height="Auto" TextWrapping="Wrap" 
+                     VerticalAlignment="Top" MinWidth="300" x:Name="textPhone"/>
+            
+            <Label Content="Mail Address:" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Target="{Binding ElementName=textMail}"/>
+            <TextBox HorizontalAlignment="Left" Height="Auto" TextWrapping="Wrap" 
+                     VerticalAlignment="Top" MinWidth="300" x:Name="textMail"/>
+
+            <Button x:Name="Submit" Grid.ColumnSpan="2" Content="Submit" 
+                    HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="150"
+                    Margin="75,15" Padding="4" Command="{Binding InsertOrUpdateCommand}"/>
+            </StackPanel>
         
-        <DataGrid x:Name="AddressTable" AutoGenerateColumns="False" SelectionMode="Single" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding}">
+        <DataGrid x:Name="AddressTable" AutoGenerateColumns="False" SelectionMode="Single" 
+                  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                  ItemsSource="{Binding}" DockPanel.Dock="Bottom">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ID}" 
+                <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Header="ID" x:Name="id" 
                                     IsReadOnly="True" 
                                     Width="Auto" MinWidth="100"/>
-                <DataGridTextColumn Binding="{Binding ContactName}" 
+                <DataGridTextColumn Binding="{Binding ContactName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Header="Name" x:Name="contactName" 
                                     Width="Auto" MinWidth="300"/>
-                <DataGridTextColumn Binding="{Binding PhoneNumber}" 
+                <DataGridTextColumn Binding="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Header="Phone Number" x:Name="phoneNumber" 
                                     Width="Auto" MinWidth="200"/>
-                <DataGridTextColumn Binding="{Binding MailAddress}" 
+                <DataGridTextColumn Binding="{Binding MailAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                     Header="Mail Address" x:Name="mailAddress" 
                                     Width="Auto" MinWidth="300"/>
 
@@ -48,5 +71,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        </DockPanel>
     </Grid>
 </UserControl>

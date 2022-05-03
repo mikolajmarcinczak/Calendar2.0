@@ -38,9 +38,12 @@ namespace Calendar_Revisited.ViewModels
 
         public ObservableCollection<UserContact> Contacts { get; private set; }
 
-        public ICommand EditCommand { get; }
-        public ICommand DeleteCommand { get; }
-        public ICommand InsertOrUpdateCommand { get; }
+        public ICommand EditCommand { get; private set; }
+        public ICommand UpdateCommand { get; private set; }
+        public ICommand InsertCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
+        public ICommand BrowseImageCommand { get; private set; }
+        public ICommand SaveCommand { get; private set; }
 
         private IContactDataService _dataService;
         private IDialogService _dialogService;
@@ -49,21 +52,81 @@ namespace Calendar_Revisited.ViewModels
         {
             _dataService = dataService;
             _dialogService = dialogService;
-        }            
+
+            EditCommand = new RelayCommand(EditContact, CanEdit);
+            UpdateCommand = new RelayCommand(UpdateContact);
+            InsertCommand = new RelayCommand(InsertContact);
+            DeleteCommand = new RelayCommand(DeleteContact, CanDelete);
+
+            BrowseImageCommand = new RelayCommand(BrowseImage, IsEdit);
+            SaveCommand = new RelayCommand(Save, IsEdit);
+            
+        }
+        
+        private bool IsEdit()
+        {
+            return IsEditMode;
+        }
+
+        private bool CanEdit()
+        {
+            if (SelectedContact == null)
+            {
+                return false;
+            }
+            return !IsEditMode;
+        }
 
         private void EditContact()
         {
+            IsEditMode = true;
+        }
+        private void InsertContact()
+        {
+            var newContact = new UserContact
+            {
+                ContactName = "N/A",
+                PhoneNumber = "N/A",
+                MailAddress = "N/A"
+            };
 
+            Contacts.Add(newContact);
+            SelectedContact = newContact;
+        }
+
+        private bool CanDelete()
+        {
+            return SelectedContact == null ? false : true;
         }
 
         private void DeleteContact()
         {
-
+            Contacts.Remove(SelectedContact);
+            Save();
+        }
+        private void Save()
+        {
+            _dataService.Save(Contacts);
+            IsEditMode = false;
+            OnPropertyChanged("SelectedContact");
         }
 
-        private void InsertOrUpdate()
+        private void UpdateContact()
         {
+            _dataService.Save(Contacts);
+        }
 
+
+        private void BrowseImage()
+        {
+            var filePath = _dialogService.OpenFile("Image files|*.bmp;*.jpg;*.jpeg;*.png|All files");
+            SelectedContact.ImagePath = filePath;
+        }
+
+        public void LoadContacts(IEnumerable<UserContact> contacts)
+        {
+            Contacts = new ObservableCollection<UserContact>(contacts);
+            OnPropertyChanged("Contacts");
         }
     }
 }

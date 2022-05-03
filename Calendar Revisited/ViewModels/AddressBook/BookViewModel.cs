@@ -28,16 +28,20 @@ namespace Calendar_Revisited.ViewModels
             ContactsViewModel = new ContactsViewModel(service, dialogService);
 
             _contactDataService = service;
+
+            LoadContactsCommand = new RelayCommand(LoadContacts);
+            LoadFavoritesCommand = new RelayCommand(LoadFavorites);
         }
 
         private void LoadContacts()
         {
-
+            ContactsViewModel.LoadContacts(_contactDataService.GetContacts());
         }
 
         private void LoadFavorites()
         {
-
+            var favorites = _contactDataService.GetContacts().Where(c => c.IsFavorite);
+            ContactsViewModel.LoadContacts(favorites);
         }
     }
 }

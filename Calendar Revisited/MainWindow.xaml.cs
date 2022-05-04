@@ -38,7 +38,7 @@ namespace Calendar_Revisited
 
         private void ContactsView_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ContactsViewModel();
+            DataContext = new AddressBookViewModel();
         }
 
         private void NotepadView_Click(object sender, RoutedEventArgs e)

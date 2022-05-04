@@ -8,7 +8,7 @@
              xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <vm:ContactsViewModel x:Key="vm"/>
+        <vm:AddressBookViewModel x:Key="vm"/>
     </UserControl.Resources>
     <UserControl.DataContext>
         <Binding Source="{StaticResource vm}"/>

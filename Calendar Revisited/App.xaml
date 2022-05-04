@@ -2,8 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Calendar_Revisited"
+             xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
+             xmlns:v="clr-namespace:Calendar_Revisited.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <DataTemplate DataType="{x:Type vm:BookViewModel}">
+            <v:BookView/>
+        </DataTemplate>
+        
     </Application.Resources>
 </Application>

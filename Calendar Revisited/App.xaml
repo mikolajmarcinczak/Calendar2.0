@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Calendar_Revisited"
              xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              xmlns:v="clr-namespace:Calendar_Revisited.Views"
+             xmlns:helper="clr-namespace:Calendar_Revisited.Helpers"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
@@ -12,6 +13,39 @@
         </DataTemplate>
 
         <BitmapImage x:Key="DefaultContactImage" UriSource="/Resources/defaultContact.png"/>
+
+        <helper:BoolToVisibilityConverter x:Key="IsEditConverter"/>
+        <helper:NullToVisibilityConverter x:Key="SelectedContactConverter"/>
+
+        <Style x:Key="favoriteCheckbox" TargetType="{x:Type CheckBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="checkboxImage" Source="/Resources/uncheckedStar.png" Width="32"/>
+                            <ContentPresenter/>
+                        </StackPanel>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="isChecked" Value="True">
+                                <Setter TargetName="checkboxImage" Property="Source" Value="/Resources/checkedStar.png"/>
+                            </Trigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="checkboxImage" Property="Source" Value="/Resources/hoverStar.png"/>
+                            </MultiTrigger>
+                            
+                        </ControlTemplate.Triggers>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Application.Resources>
 </Application>

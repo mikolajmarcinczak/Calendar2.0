@@ -17,8 +17,8 @@
         <DataTemplate x:Name="calendarViewTemplate" DataType="{x:Type vm:CalendarViewModel}">
             <views:CalendarView DataContext="{Binding}"/>
         </DataTemplate>
-        <DataTemplate x:Name="contactsViewTemplate" DataType="{x:Type vm:ContactsViewModel}">
-            <views:ContactsView DataContext="{Binding}"/>
+        <DataTemplate x:Name="contactsViewTemplate" DataType="{x:Type vm:AddressBookViewModel}">
+            <views:AddressBookView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="notepadViewTemplate" DataType="{x:Type vm:NotepadViewModel}">
             <views:NotepadView DataContext="{Binding}"/>

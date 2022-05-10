@@ -10,6 +10,8 @@
         <DataTemplate DataType="{x:Type vm:BookViewModel}">
             <v:BookView/>
         </DataTemplate>
-        
+
+        <BitmapImage x:Key="DefaultContactImage" UriSource="/Resources/defaultContact.png"/>
+
     </Application.Resources>
 </Application>

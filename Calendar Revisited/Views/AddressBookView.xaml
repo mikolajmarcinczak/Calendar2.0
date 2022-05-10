@@ -14,53 +14,55 @@
     <UserControl.DataContext>
         <Binding Source="{StaticResource vm}"/>
     </UserControl.DataContext>
-    
-    <Grid DockPanel.Dock="Top" Height="40" Background="#AAE">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Button Content="Favorite"
-                Command="{Binding BookViewModel.LoadFavoritesCommand}"/>
-        </Grid>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Height="40" Background="#AAE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1">
-            <Button Content="Contacts"
-                Command="{Binding BookViewModel.LoadContactsCommand}"/>
-        </Grid>
+            <Grid Grid.Column="0">
+                <Button Content="Favorite"
+                    Command="{Binding BookViewModel.LoadFavoritesCommand}"/>
+            </Grid>
 
-        <StackPanel Grid.Column="6" Grid.ColumnSpan="2" 
-                    Orientation="Horizontal" HorizontalAlignment="Right">
+            <Grid Grid.Column="1">
+                <Button Content="Contacts"
+                    Command="{Binding BookViewModel.LoadContactsCommand}"/>
+            </Grid>
 
-            <Button Command="{Binding BookViewModel.ContactsViewModel.InsertCommand}">
-                <Button.Content>
-                    <Image Width="30" Height="30"/>
-                </Button.Content>
-            </Button>
+            <StackPanel Grid.Column="6" Grid.ColumnSpan="2" 
+                        Orientation="Horizontal" HorizontalAlignment="Right">
 
-            <Button Command="{Binding BookViewModel.ContactsViewModel.EditCommand}">
-                <Button.Content>
-                    <Image Width="30" Height="30"/>
-                </Button.Content>
-            </Button>
+                <Button Command="{Binding BookViewModel.ContactsViewModel.InsertCommand}">
+                    <Button.Content>
+                        <Image Width="30" Height="30"/>
+                    </Button.Content>
+                </Button>
 
-            <Button Command="{Binding BookViewModel.ContactsViewModel.DeleteCommand}">
-                <Button.Content>
-                    <Image Width="30" Height="30"/>
-                </Button.Content>
-            </Button>
+                <Button Command="{Binding BookViewModel.ContactsViewModel.EditCommand}">
+                    <Button.Content>
+                        <Image Width="30" Height="30"/>
+                    </Button.Content>
+                </Button>
 
-        </StackPanel>
+                <Button Command="{Binding BookViewModel.ContactsViewModel.DeleteCommand}">
+                    <Button.Content>
+                        <Image Width="30" Height="30"/>
+                    </Button.Content>
+                </Button>
+
+            </StackPanel>
         
-        <Grid DockPanel.Dock="Bottom">
-            <ContentControl Content="{Binding CurrentView}"/>
+            <Grid DockPanel.Dock="Bottom">
+                <ContentControl Content="{Binding CurrentView}"/>
+            </Grid>
         </Grid>
-    </Grid>
+    </DockPanel>
 </UserControl>

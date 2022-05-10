@@ -17,6 +17,96 @@
         <helper:BoolToVisibilityConverter x:Key="IsEditConverter"/>
         <helper:NullToVisibilityConverter x:Key="SelectedContactConverter"/>
 
+        <!--Brushes (https://flatuicolors.com/palette/de) -->
+        <SolidColorBrush x:Key="Elusive Blue" Color="#d2dae2"/>
+        <SolidColorBrush x:Key="London Square" Color="#808e9b"/>
+
+        <SolidColorBrush x:Key="Dark Periwinkle" Color="#575fcf"/>
+        <SolidColorBrush x:Key="Free Speech Blue" Color="#3c40c6"/>
+
+        <SolidColorBrush x:Key="Narenji Orange" Color="#ffc048"/>
+        <SolidColorBrush x:Key="Chrome Yellow" Color="#ffa801"/>
+
+        <SolidColorBrush x:Key="Sunset Orange" Color="#ff5e57"/>
+        <SolidColorBrush x:Key="Red Orange" Color="#ff3f34"/>
+
+        <SolidColorBrush x:Key="Minty Green" Color="#0be881"/>
+        <SolidColorBrush x:Key="Green Teal" Color="#05c46b"/>
+
+        <SolidColorBrush x:Key="Dark Periwinkle" Color="#575fcf"/>
+        <SolidColorBrush x:Key="Free Speech Blue" Color="#3c40c6"/>
+
+        <SolidColorBrush x:Key="Good Night" Color="#485460"/>
+        <SolidColorBrush x:Key="Black Pearl" Color="#1e272e"/>
+
+
+        <!--Controls -->
+
+        <Style x:Key="MenuTabButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource Innuendo}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BlueHorizon}"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style x:Key="MenuIconButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource MaximumBlueGreen}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <Style x:Key="DetailLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource BlueGrey}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="1"/>
+        </Style>
+
+        <Style x:Key="ContentLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource AlmostBlack}"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style x:Key="DetailBorder" TargetType="Border">
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Background" Value="{StaticResource LightBlueGreyGradient}"/>
+        </Style>
+
+        <Style x:Key="EditBox" TargetType="{x:Type TextBoxBase}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        
+                        <Border x:Name="Border" CornerRadius="3" Padding="2"
+                                Background="White"
+                                BorderBrush="{StaticResource BlueHorizon}"
+                                BorderThickness="1">
+                            <ScrollViewer Margin="0" x:Name="ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#FFa5b1c2"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF69717C"/>
+                                <Setter Property="Foreground" Value="#FFd1d8e0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <Style x:Key="favoriteCheckbox" TargetType="{x:Type CheckBox}">
             <Setter Property="Template">
                 <Setter.Value>

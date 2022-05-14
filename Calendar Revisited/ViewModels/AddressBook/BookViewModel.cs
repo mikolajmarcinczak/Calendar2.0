@@ -29,6 +29,7 @@ namespace Calendar_Revisited.ViewModels
 
             _contactDataService = service;
 
+            LoadContacts();
             LoadContactsCommand = new RelayCommand(LoadContacts);
             LoadFavoritesCommand = new RelayCommand(LoadFavorites);
         }

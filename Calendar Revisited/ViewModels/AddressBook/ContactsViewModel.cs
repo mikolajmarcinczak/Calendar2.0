@@ -54,7 +54,7 @@ namespace Calendar_Revisited.ViewModels
             _dialogService = dialogService;
 
             EditCommand = new RelayCommand(EditContact, CanEdit);
-            UpdateCommand = new RelayCommand(UpdateContact);
+            UpdateCommand = new RelayCommand(UpdateContact, IsEdit);
             InsertCommand = new RelayCommand(InsertContact);
             DeleteCommand = new RelayCommand(DeleteContact, CanDelete);
 

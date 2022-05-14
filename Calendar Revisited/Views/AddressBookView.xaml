@@ -4,10 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Calendar_Revisited.Views"
-             xmlns:views="clr-namespace:Calendar_Revisited.Views"
              xmlns:vm="clr-namespace:Calendar_Revisited.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:MinHeight="600" d:MinWidth="800">
     <UserControl.Resources>
         <vm:AddressBookViewModel x:Key="vm"/>
     </UserControl.Resources>
@@ -16,7 +15,7 @@
     </UserControl.DataContext>
 
     <DockPanel>
-        <Grid DockPanel.Dock="Top" Height="40" Background="#AAE">
+        <Grid DockPanel.Dock="Top" Height="40" Background="{StaticResource LondonNightGradient}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -28,41 +27,44 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Button Content="Favorite"
+                <Button Style="{StaticResource MenuTabButton}" Content="Favorite"
                     Command="{Binding BookViewModel.LoadFavoritesCommand}"/>
             </Grid>
 
             <Grid Grid.Column="1">
-                <Button Content="Contacts"
+                <Button Style="{StaticResource MenuTabButton}" Content="Contacts"
                     Command="{Binding BookViewModel.LoadContactsCommand}"/>
             </Grid>
 
             <StackPanel Grid.Column="6" Grid.ColumnSpan="2" 
                         Orientation="Horizontal" HorizontalAlignment="Right">
 
-                <Button Command="{Binding BookViewModel.ContactsViewModel.InsertCommand}">
+                <Button Style="{StaticResource MenuIconButton}"
+                        Command="{Binding BookViewModel.ContactsViewModel.InsertCommand}">
                     <Button.Content>
-                        <Image Width="30" Height="30"/>
+                        <Image Width="30" Height="30" Source="/Resources/addIcon.png"/>
                     </Button.Content>
                 </Button>
 
-                <Button Command="{Binding BookViewModel.ContactsViewModel.EditCommand}">
+                <Button Style="{StaticResource MenuIconButton}" 
+                        Command="{Binding BookViewModel.ContactsViewModel.EditCommand}">
                     <Button.Content>
-                        <Image Width="30" Height="30"/>
+                        <Image Width="30" Height="30" Source="/Resources/createIcon.png"/>
                     </Button.Content>
                 </Button>
 
-                <Button Command="{Binding BookViewModel.ContactsViewModel.DeleteCommand}">
+                <Button Style="{StaticResource MenuIconButton}"
+                        Command="{Binding BookViewModel.ContactsViewModel.DeleteCommand}">
                     <Button.Content>
-                        <Image Width="30" Height="30"/>
+                        <Image Width="30" Height="30" Source="/Resources/deleteIcon.png"/>
                     </Button.Content>
                 </Button>
 
             </StackPanel>
         
-            <Grid DockPanel.Dock="Bottom">
-                <ContentControl Content="{Binding CurrentView}"/>
-            </Grid>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <ContentControl Content="{Binding CurrentView}"/>
         </Grid>
     </DockPanel>
 </UserControl>

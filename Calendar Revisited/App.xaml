@@ -23,6 +23,12 @@
 
         <SolidColorBrush x:Key="Dark Periwinkle" Color="#575fcf"/>
         <SolidColorBrush x:Key="Free Speech Blue" Color="#3c40c6"/>
+        
+        <SolidColorBrush x:Key="Fresh Turquoise" Color="#34e7e4"/>
+        <SolidColorBrush x:Key="Jade Dust" Color="#00d8d6"/>
+
+        <SolidColorBrush x:Key="Megaman" Color="#4bcffa"/>
+        <SolidColorBrush x:Key="Spiro Disco Ball" Color="#0fbcf9"/>
 
         <SolidColorBrush x:Key="Narenji Orange" Color="#ffc048"/>
         <SolidColorBrush x:Key="Chrome Yellow" Color="#ffa801"/>
@@ -33,46 +39,56 @@
         <SolidColorBrush x:Key="Minty Green" Color="#0be881"/>
         <SolidColorBrush x:Key="Green Teal" Color="#05c46b"/>
 
-        <SolidColorBrush x:Key="Dark Periwinkle" Color="#575fcf"/>
-        <SolidColorBrush x:Key="Free Speech Blue" Color="#3c40c6"/>
-
         <SolidColorBrush x:Key="Good Night" Color="#485460"/>
         <SolidColorBrush x:Key="Black Pearl" Color="#1e272e"/>
 
+        <!--Gradients-->
+
+        <LinearGradientBrush x:Key="LondonNightGradient" EndPoint="0,1">
+            <GradientStop Color="#808e9b" Offset="0.0"/>
+            <GradientStop Color="#575fcf" Offset="0.5"/>
+            <GradientStop Color="#485460" Offset="1.0"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DarkDiscoGradient" EndPoint="0,1">
+            <GradientStop Color="#3c40c6" Offset="0.0"/>
+            <GradientStop Color="#575fcf" Offset="0.5"/>
+            <GradientStop Color="#0fbcf9" Offset="1.0"/>
+        </LinearGradientBrush>
 
         <!--Controls -->
 
         <Style x:Key="MenuTabButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
-            <Setter Property="Foreground" Value="{StaticResource Innuendo}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BlueHorizon}"/>
+            <Setter Property="Background" Value="{StaticResource LondonNightGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource Elusive Blue}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Black Pearl}"/>
             <Setter Property="BorderThickness" Value="0,0,1,0"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <Style x:Key="MenuIconButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
-            <Setter Property="Foreground" Value="{StaticResource MaximumBlueGreen}"/>
+            <Setter Property="Background" Value="{StaticResource LondonNightGradient}"/>
+            <Setter Property="Foreground" Value="{StaticResource Minty Green}"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
 
         <Style x:Key="DetailLabel" TargetType="Label">
-            <Setter Property="Foreground" Value="{StaticResource BlueGrey}"/>
+            <Setter Property="Foreground" Value="{StaticResource Good Night}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Padding" Value="1"/>
         </Style>
 
         <Style x:Key="ContentLabel" TargetType="Label">
-            <Setter Property="Foreground" Value="{StaticResource AlmostBlack}"/>
+            <Setter Property="Foreground" Value="{StaticResource Black Pearl}"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="FontSize" Value="14"/>
         </Style>
 
         <Style x:Key="DetailBorder" TargetType="Border">
             <Setter Property="CornerRadius" Value="3"/>
-            <Setter Property="Background" Value="{StaticResource LightBlueGreyGradient}"/>
+            <Setter Property="Background" Value="{StaticResource DarkDiscoGradient}"/>
         </Style>
 
         <Style x:Key="EditBox" TargetType="{x:Type TextBoxBase}">
@@ -89,7 +105,7 @@
                         
                         <Border x:Name="Border" CornerRadius="3" Padding="2"
                                 Background="White"
-                                BorderBrush="{StaticResource BlueHorizon}"
+                                BorderBrush="{StaticResource Free Speech Blue}"
                                 BorderThickness="1">
                             <ScrollViewer Margin="0" x:Name="ContentHost"/>
                         </Border>
@@ -118,7 +134,7 @@
 
                         <ControlTemplate.Triggers>
 
-                            <Trigger Property="isChecked" Value="True">
+                            <Trigger Property="IsChecked" Value="True">
                                 <Setter TargetName="checkboxImage" Property="Source" Value="/Resources/checkedStar.png"/>
                             </Trigger>
 

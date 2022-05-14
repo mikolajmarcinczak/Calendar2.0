@@ -45,7 +45,7 @@
                            FallbackValue={StaticResource DefaultContactImage},
                            TargetNullValue={StaticResource DefaultContactImage}}"/>
 
-                    <Button Style="{StaticResource MenuIconButton}" Background="#D8D"
+                    <Button Style="{StaticResource MenuIconButton}" Background="{StaticResource Dark Periwinkle}"
                             Command="{Binding BrowseImageCommand}"
                             Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
                             VerticalAlignment="Bottom" HorizontalAlignment="Right"
@@ -57,7 +57,7 @@
 
             <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal">
                 <Button Style="{StaticResource MenuIconButton}"
-                        Background="#8DD"
+                        Background="{StaticResource Jade Dust}"
                         Command="{Binding SaveCommand}"
                         Width="90" Height="40" Margin="5">
                     <Button.Content>

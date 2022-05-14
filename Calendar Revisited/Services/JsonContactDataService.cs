@@ -11,7 +11,7 @@ namespace Calendar_Revisited.Services
 {
     public class JsonContactDataService : IContactDataService
     {
-        private readonly string _dataPath = "Resources/ContactData.json";
+        private readonly string _dataPath = @"../../../Resources/ContactData.json";
 
         public IEnumerable<UserContact> GetContacts()
         {

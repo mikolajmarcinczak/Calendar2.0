@@ -13,15 +13,15 @@ namespace Calendar_Revisited.ViewModels
         private object _currentView;
         public object CurrentView
         {
-            get { return _currentView; }
-            set { OnPropertyChanged(ref _currentView, value); }
+            get => _currentView;
+            set => OnPropertyChanged(ref _currentView, value);
         }
 
         private BookViewModel _bookViewModel;
         public BookViewModel BookViewModel
         {
-            get { return _bookViewModel; }
-            set { OnPropertyChanged(ref _bookViewModel, value); }
+            get => _bookViewModel;
+            set => OnPropertyChanged(ref _bookViewModel, value);
         }
 
         public AddressBookViewModel()

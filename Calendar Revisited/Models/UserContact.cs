@@ -12,36 +12,36 @@ namespace Calendar_Revisited.Models
         private string _contactName;
         public string ContactName 
         { 
-            get { return _contactName; }
-            set { OnPropertyChanged(ref _contactName, value); }
+            get => _contactName;
+            set => OnPropertyChanged(ref _contactName, value);
         }
 
         private string _phoneNumber;
         public string PhoneNumber 
         { 
-            get { return _phoneNumber; }
-            set { OnPropertyChanged(ref _phoneNumber, value); }
+            get => _phoneNumber; 
+            set => OnPropertyChanged(ref _phoneNumber, value);
         }
 
         private string _mailAddress;
         public string MailAddress 
         {
-            get { return _mailAddress; }
-            set { OnPropertyChanged(ref _mailAddress, value); }
+            get => _mailAddress;
+            set => OnPropertyChanged(ref _mailAddress, value);
         }
 
         private bool _isFavorite;
         public bool IsFavorite
         {
-            get { return _isFavorite; }
-            set { OnPropertyChanged(ref _isFavorite, value); }
+            get => _isFavorite;
+            set => OnPropertyChanged(ref _isFavorite, value);
         }
 
         private string _imagePath;
         public string ImagePath
         {
-            get { return _imagePath; }
-            set { OnPropertyChanged(ref _imagePath, value); }
+            get => _imagePath; 
+            set => OnPropertyChanged(ref _imagePath, value);
         }
     }
 }

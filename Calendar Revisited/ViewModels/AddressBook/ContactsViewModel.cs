@@ -16,14 +16,14 @@ namespace Calendar_Revisited.ViewModels
         private UserContact _selectedContact;
         public UserContact SelectedContact
         {
-            get { return _selectedContact; }
-            set { OnPropertyChanged(ref _selectedContact, value); }
+            get => _selectedContact;
+            set => OnPropertyChanged(ref _selectedContact, value); 
         }
 
         private bool _isEditMode;
         public bool IsEditMode
         {
-            get { return _isEditMode; }
+            get => _isEditMode; 
             set
             {
                 OnPropertyChanged(ref _isEditMode, value);
@@ -33,7 +33,7 @@ namespace Calendar_Revisited.ViewModels
 
         public bool IsDisplayMode
         {
-            get { return !_isEditMode; }
+            get => !_isEditMode; 
         }
 
         public ObservableCollection<UserContact> Contacts { get; private set; }

@@ -16,8 +16,8 @@ namespace Calendar_Revisited.ViewModels
         private ContactsViewModel _contactsViewModel;
         public ContactsViewModel ContactsViewModel
         {
-            get { return _contactsViewModel; }
-            set { OnPropertyChanged(ref _contactsViewModel, value); }
+            get => _contactsViewModel;
+            set => OnPropertyChanged(ref _contactsViewModel, value);
         }
 
         public ICommand LoadContactsCommand { get; private set; }
